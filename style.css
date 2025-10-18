@@ -223,13 +223,93 @@ footer {
         margin-top: 20px;
     }
 }
+/* KEYFRAME ANIMATIONS BARU */
 
-/* Animasi Badge/Poin */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+/* 1. Efek "Poin Naik" saat ada notifikasi skor */
+@keyframes flyUpAndFade {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-50px); opacity: 0; }
 }
+
+/* 2. Animasi Kartu Tantangan saat di-hover/focus */
+.challenge-card {
+    /* ... (CSS sebelumnya) ... */
+    position: relative;
+    overflow: hidden; /* Penting untuk efek kilau */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Lebih menarik */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek Kilau (Shimmer/Glow) pada Kartu saat Hover */
+.challenge-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 30%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: skewX(-20deg);
+    transition: left 0.5s;
+}
+
+.challenge-card:hover::before {
+    left: 130%; /* Pindah dari kiri ke kanan saat hover */
+    transition: left 0.5s ease-out;
+}
+
+/* 3. Animasi Item Leaderboard */
+.leaderboard-item {
+    /* ... (CSS sebelumnya) ... */
+    opacity: 0; /* Mulai tersembunyi untuk efek fade-in */
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Atur delay untuk setiap item agar terlihat berurutan */
+.leaderboard-list .leaderboard-item:nth-child(1) { animation-delay: 0.1s; }
+.leaderboard-list .leaderboard-item:nth-child(2) { animation-delay: 0.2s; }
+.leaderboard-list .leaderboard-item:nth-child(3) { animation-delay: 0.3s; }
+.leaderboard-list .leaderboard-item:nth-child(4) { animation-delay: 0.4s; }
+/* ... dst ... */
+
+
+/* 4. Style untuk Notifikasi Poin (dibuat via JS) */
+.point-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.5em;
+    font-weight: 700;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    pointer-events: none; /* Agar tidak menghalangi klik */
+    opacity: 0;
+    animation: popIn 0.3s forwards, popOut 0.3s 1.5s forwards;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes popOut {
+    from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+}
+
 
 .profile i {
     animation: pulse 2s infinite ease-in-out; /* Efek berdenyut pada ikon user */
