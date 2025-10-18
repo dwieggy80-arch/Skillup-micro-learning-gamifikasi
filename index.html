@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUP - Micro-Learning & Gamifikasi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SkillUP 🚀</div>
+        <div class="profile">
+            <span>Halo, Player!</span>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+
+    <main>
+        <section class="leaderboard-section">
+            <h2>🏆 Papan Peringkat Mingguan</h2>
+            <div id="leaderboard-list" class="leaderboard-list">
+                </div>
+            <button class="btn-primary">Lihat Semua Peringkat</button>
+        </section>
+
+        <hr>
+
+        <section class="challenges-section">
+            <h2>🔥 Tantangan Harian (5 Menit)</h2>
+            <div class="challenge-grid">
+                <div class="challenge-card" data-challenge="vocab">
+                    <h3>Kuis Kosakata Inggris 🇬🇧</h3>
+                    <p>Uji 10 kata baru. Cepat & Tepat!</p>
+                    <div class="progress-bar"><div style="width: 75%;"></div></div>
+                    <button class="btn-start">Mulai Sekarang</button>
+                </div>
+                <div class="challenge-card" data-challenge="typing">
+                    <h3>Tes Mengetik Cepat ⌨️</h3>
+                    <p>Berapa WPM-mu hari ini?</p>
+                    <div class="progress-bar"><div style="width: 50%;"></div></div>
+                    <button class="btn-start">Mulai Sekarang</button>
+                </div>
+                <div class="challenge-card" data-challenge="history">
+                    <h3>Tebak Tokoh Sejarah 👑</h3>
+                    <p>Asah pengetahuan umummu.</p>
+                    <div class="progress-bar"><div style="width: 90%;"></div></div>
+                    <button class="btn-start">Mulai Sekarang</button>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="lifehacks-section">
+            <h2>💡 Pojok "Life Hacks"</h2>
+            <div class="lifehack-grid">
+                <article class="lifehack-card">
+                    <h4>Cara Belajar Efektif 🧠</h4>
+                    <p>Teknik Pomodoro 101. Baca cepat!</p>
+                </article>
+                <article class="lifehack-card">
+                    <h4>Tips Public Speaking 🗣️</h4>
+                    <p>3 detik untuk menarik perhatian audiens.</p>
+                </article>
+                <article class="lifehack-card">
+                    <h4>Dasar-dasar Excel 📊</h4>
+                    <p>Rumus VLOOKUP hanya dalam 1 menit.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 SkillUP. Belajar Singkat, Skill Meningkat.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
