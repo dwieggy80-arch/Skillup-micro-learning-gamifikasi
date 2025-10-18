@@ -1,0 +1,236 @@
+/* RESET dan FONT */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f2f5; /* Warna dasar cerah */
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 50px; /* Ruang untuk simulasi mobile */
+}
+
+/* HEADER - Bagian Atas */
+header {
+    background: linear-gradient(135deg, #1e90ff, #4682b4); /* Gradien Biru Keren */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.profile i {
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 20px;
+    max-width: 600px; /* Batasi lebar untuk nuansa 'Aplikasi HP' */
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #1e90ff; /* Warna Biru Aksen */
+    border-bottom: 3px solid #f0f2f5;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: #ff6347; /* Warna Merah-Oranye Aksen */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #e55338;
+}
+
+.btn-start {
+    background-color: #4CAF50; /* Hijau untuk Mulai */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 1. LEADERBOARD */
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.leaderboard-item:hover {
+    transform: translateY(-2px); /* Efek melayang */
+}
+
+.rank {
+    width: 30px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.top-3 {
+    background: linear-gradient(45deg, #ffd700, #ffae42); /* Emas untuk Top 3 */
+    color: #5d4037; /* Coklat tua */
+    padding: 12px 15px;
+    border: 2px solid gold;
+}
+
+.top-3 .rank {
+    font-size: 1.5em;
+}
+
+
+/* 2. TANTANGAN HARIAN */
+.challenge-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Satu kolom di HP */
+    gap: 15px;
+}
+
+.challenge-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #1e90ff; /* Garis aksen */
+    transition: box-shadow 0.3s;
+}
+
+.challenge-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.challenge-card h3 {
+    color: #1e90ff;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    height: 100%;
+    background-color: #ff6347; /* Progress bar warna merah-oranye */
+    border-radius: 5px;
+}
+
+/* 3. LIFE HACKS */
+.lifehack-grid {
+    display: flex;
+    overflow-x: scroll; /* Scroll horizontal untuk mobile */
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.lifehack-card {
+    min-width: 200px; /* Lebar minimal untuk scroll */
+    background: #f4f8ff;
+    border: 1px solid #cce0ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.lifehack-card h4 {
+    color: #1e90ff;
+    margin-bottom: 5px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    color: #aaa;
+    font-size: 0.8em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #eee;
+    max-width: 640px; /* Sesuaikan dengan main content */
+    margin: 0 auto;
+}
+
+/* Media Query untuk Desktop/Tablet (Opsional tapi baik) */
+@media (min-width: 768px) {
+    .challenge-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tiga kolom di desktop */
+    }
+    .lifehack-grid {
+        overflow-x: visible; /* Tidak perlu scroll di desktop */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer {
+        position: static;
+        max-width: none;
+        margin-top: 20px;
+    }
+}
+
+/* Animasi Badge/Poin */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.profile i {
+    animation: pulse 2s infinite ease-in-out; /* Efek berdenyut pada ikon user */
+}
